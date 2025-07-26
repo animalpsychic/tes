@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funnel Kirim Email</title>
+</head>
+<body>
+  <h2>Hubungi Kami</h2>
+  <form action="https://formsubmit.co/emailkamu@example.com" method="POST">
+    <input type="text" name="nama" placeholder="Nama Anda" required><br>
+    <input type="email" name="email" placeholder="Email Anda" required><br>
+    <textarea name="pesan" placeholder="Pesan Anda"></textarea><br>
+    
+    <!-- Redirect setelah submit -->
+    <input type="hidden" name="_next" value="https://namadomainmu.github.io/terima-kasih.html">
+    
+    <!-- Anti spam -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <button type="submit">Kirim</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanya Dukun Sekarang</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 30px; }
+    input, select, button { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Tanya Dukun Sekarang</h1>
+  <p>Isi datamu, lalu klik tombol untuk langsung konsultasi di WhatsApp</p>
+
+  <input type="text" id="nama" placeholder="Nama Kamu">
+  <input type="text" id="lahir" placeholder="Tanggal Lahir (misal: 27 Feb 1996)">
+  <select id="masalah">
+    <option value="">Pilih Masalah</option>
+    <option value="jodoh">Jodoh</option>
+    <option value="rezeki">Rezeki</option>
+    <option value="pelet">Dipelet</option>
+    <option value="karir">Karir</option>
+  </select>
+  <br>
+  <button onclick="kirimWA()">Tanya Sekarang</button>
+
+  <script>
+    function kirimWA() {
+      const nama = document.getElementById("nama").value;
+      const lahir = document.getElementById("lahir").value;
+      const masalah = document.getElementById("masalah").value;
+      if (!nama || !lahir || !masalah) {
+        alert("Mohon lengkapi semua data");
+        return;
+      }
+      const noWa = "6281234567890"; // ganti dengan nomor WhatsApp kamu
+      const pesan = `Halo, nama saya ${nama}, lahir ${lahir}. Saya ingin konsultasi tentang ${masalah}.`;
+      const url = `https://api.whatsapp.com/send?phone=${noWa}&text=${encodeURIComponent(pesan)}`;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

@@ -2,42 +2,107 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tanya Dukun Sekarang</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 30px; }
-    input, select, button { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #111, #222);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select, button {
+      padding: 14px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    input, select {
+      background-color: #333;
+      color: #fff;
+    }
+
+    button {
+      background-color: #ffbf00;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffaa00;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      input, select, button { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>Tanya Dukun Sekarang</h1>
-  <p>Isi datamu, lalu klik tombol untuk langsung konsultasi di WhatsApp</p>
 
-  <input type="text" id="nama" placeholder="Nama Kamu">
-  <input type="text" id="lahir" placeholder="Tanggal Lahir (misal: 27 Feb 1996)">
-  <select id="masalah">
-    <option value="">Pilih Masalah</option>
-    <option value="jodoh">Jodoh</option>
-    <option value="rezeki">Rezeki</option>
-    <option value="pelet">Dipelet</option>
-    <option value="karir">Karir</option>
-  </select>
-  <br>
-  <button onclick="kirimWA()">Tanya Sekarang</button>
+  <h1>Tanya Dukun Sekarang</h1>
+  <p>Isi data kamu dan langsung konsultasi lewat WhatsApp</p>
+
+  <div class="form-container">
+    <input type="text" id="nama" placeholder="Nama Kamu">
+    <input type="text" id="lahir" placeholder="Tanggal Lahir (cth: 21 Mei 1998)">
+    <select id="masalah">
+      <option value="">Pilih Masalah</option>
+      <option value="jodoh">Jodoh</option>
+      <option value="rezeki">Rezeki</option>
+      <option value="pelet">Pelet</option>
+      <option value="karir">Karir</option>
+    </select>
+    <button onclick="kirimWA()">Tanya Sekarang</button>
+  </div>
 
   <script>
     function kirimWA() {
-      const nama = document.getElementById("nama").value;
-      const lahir = document.getElementById("lahir").value;
+      const nama = document.getElementById("nama").value.trim();
+      const lahir = document.getElementById("lahir").value.trim();
       const masalah = document.getElementById("masalah").value;
+
       if (!nama || !lahir || !masalah) {
-        alert("Mohon lengkapi semua data");
+        alert("Harap lengkapi semua data.");
         return;
       }
-      const noWa = "6281234567890"; // ganti dengan nomor WhatsApp kamu
+
+      const noWa = "6281234567890"; // ganti dengan no WA kamu
       const pesan = `Halo, nama saya ${nama}, lahir ${lahir}. Saya ingin konsultasi tentang ${masalah}.`;
       const url = `https://api.whatsapp.com/send?phone=${noWa}&text=${encodeURIComponent(pesan)}`;
+
       window.location.href = url;
     }
   </script>
+
 </body>
 </html>

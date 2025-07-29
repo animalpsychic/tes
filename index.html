@@ -25,9 +25,7 @@
     p {
       font-size: 1rem;
       margin-bottom: 20px;
-      text-align: left;
-      max-width: 500px;
-      margin: auto;
+      text-align: center;
     }
 
     .form-container {
@@ -36,7 +34,7 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     input, select, button {
       padding: 14px;
       margin: 8px 0;
@@ -63,6 +61,29 @@
       background-color: #ffaa00;
     }
 
+    .content-section {
+      margin-top: 40px;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .content-section img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .content-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .content-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     @media (max-width: 480px) {
       h1 { font-size: 1.5rem; }
       input, select, button { font-size: 0.95rem; }
@@ -86,10 +107,18 @@
     </select>
     <button onclick="kirimWA()">Tanya Sekarang</button>
   </div>
-  
-  <div class="container">
- <p> Ya2, berikut strategi cepat dan ekstrem agar cepat viral secara online—baik untuk jasa spiritual, produk cinta, atau situs seperti tesjodoh.com, rajadukun.com, dll. Strategi ini fokus ke branding, konten, dan psikologi trigger emosi:</p>
-</div>
+
+  <div class="content-section">
+    <h2>Kenapa Konsultasi dengan Dukun?</h2>
+    <p>
+      Banyak orang merasa buntu menghadapi masalah hidup, terutama dalam hal cinta, rezeki, atau karir. Dengan energi spiritual, dukun berpengalaman bisa membantu membuka jalan, memulihkan aura, dan menarik keberuntungan.
+    </p>
+    <img src="https://via.placeholder.com/600x300?text=Dukun+Spiritual" alt="Dukun Spiritual">
+    <p>
+      Konsultasi bersifat privat dan langsung melalui WhatsApp. Semua masalah akan dijaga kerahasiaannya. Cobalah sekarang dan rasakan perubahan nyata!
+    </p>
+  </div>
+
   <script>
     function kirimWA() {
       const nama = document.getElementById("nama").value.trim();

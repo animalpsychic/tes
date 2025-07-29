@@ -64,7 +64,7 @@
     .content-section {
       margin-top: 40px;
       max-width: 800px;
-      text-align: center;
+      text-align: left;
     }
 
     .content-section img {
@@ -83,6 +83,28 @@
       font-size: 1rem;
       line-height: 1.6;
       text-align: left;
+    }
+
+    .tombol-chat-bawah {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .tombol-chat-bawah a {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .tombol-chat-bawah a:hover {
+      background-color: #1ebc59;
     }
 
     @media (max-width: 480px) {
@@ -114,10 +136,16 @@
     <p>
       Banyak orang merasa buntu menghadapi masalah hidup, terutama dalam hal cinta, rezeki, atau karir. Dengan energi spiritual, dukun berpengalaman bisa membantu membuka jalan, memulihkan aura, dan menarik keberuntungan.
     </p>
-    
+    <img src="https://via.placeholder.com/600x300?text=Dukun+Spiritual" alt="Dukun Spiritual">
     <p>
       Konsultasi bersifat privat dan langsung melalui WhatsApp. Semua masalah akan dijaga kerahasiaannya. Cobalah sekarang dan rasakan perubahan nyata!
     </p>
+  </div>
+
+  <div class="tombol-chat-bawah">
+    <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Halo%2C%20saya%20ingin%20konsultasi%20spiritual" target="_blank">
+      Chat Sekarang
+    </a>
   </div>
 
   <script>
@@ -131,7 +159,7 @@
         return;
       }
 
-      const noWa = "6281234567890"; // ganti dengan no WA kamu
+      const noWa = "6281234567890"; // Ganti dengan nomor kamu
       const pesan = `Halo, nama saya ${nama}, lahir ${lahir}. Saya ingin konsultasi tentang ${masalah}.`;
       const url = `https://api.whatsapp.com/send?phone=${noWa}&text=${encodeURIComponent(pesan)}`;
 
